@@ -24,8 +24,6 @@ requirements:
   run:
     - python
     - pyyaml
-    - future
-    - shutilwhich
     - click
 
 test:
