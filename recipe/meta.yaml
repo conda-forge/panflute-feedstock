@@ -1,5 +1,5 @@
 {% set name = "panflute" %}
-{% set version = "1.12.3" %}
+{% set version = "1.12.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 3e42b89a0c52596bee6acf89686cdd8dfbda95343e879876590fff00d9cb8fac
+  sha256: 5c05dc65328b5881501fa5c1db4f202a0508c1b2f161c6b843516d0c47a49b95
 
 build:
   noarch: python
@@ -24,8 +24,6 @@ requirements:
   run:
     - python
     - pyyaml
-    - future
-    - shutilwhich
     - click
 
 test:
