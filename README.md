@@ -5,11 +5,13 @@ Home: https://github.com/sergiocorreia/panflute
 
 Package license: BSD-3-Clause
 
-Feedstock license: BSD 3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/panflute-feedstock/blob/master/LICENSE.txt)
 
 Summary: Pythonic Pandoc filters
 
+Development: https://github.com/sergiocorreia/panflute
 
+Documentation: http://scorreia.com/software/panflute/
 
 Current build status
 ====================
