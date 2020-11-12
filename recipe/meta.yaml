@@ -1,5 +1,5 @@
 {% set name = "panflute" %}
-{% set version = "1.12.5" %}
+{% set version = "2.0.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 8b89507c02fde97650441d50169958b50cb13000edcc7f061390ea6fc313775c
+  sha256: ff6b65624442ed4a331133326ca001f4043a6552e6d344e87dc085943dc355eb
 
 build:
   noarch: python
@@ -15,7 +15,7 @@ build:
   entry_points:
     - panflute = panflute:main
     - panfl = panflute:panfl
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
@@ -37,7 +37,7 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
-  summary: 'Pythonic Pandoc filters'
+  summary: Pythonic Pandoc filters
   doc_url: http://scorreia.com/software/panflute/
   dev_url: https://github.com/sergiocorreia/panflute
 
