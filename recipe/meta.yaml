@@ -1,5 +1,5 @@
 {% set name = "panflute" %}
-{% set version = "1.12.5" %}
+{% set version = "2.0.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 8b89507c02fde97650441d50169958b50cb13000edcc7f061390ea6fc313775c
+  sha256: ff6b65624442ed4a331133326ca001f4043a6552e6d344e87dc085943dc355eb
 
 build:
   noarch: python
@@ -19,18 +19,24 @@ build:
 
 requirements:
   host:
-    - python
+    - python >=3.6
     - pip
   run:
-    - python
+    - python >=3.6
     - pyyaml
     - click
+    - pandoc >=2.11.0.4
 
 test:
   imports:
     - panflute
   commands:
+    - pip check
+    - |
+      echo '# Testing' | pandoc -F panflute 
     - panfl --help
+  requires:
+    - pip
 
 about:
   home: https://github.com/sergiocorreia/panflute
@@ -43,4 +49,5 @@ about:
 
 extra:
   recipe-maintainers:
+    - ickc
     - kiwi0fruit
