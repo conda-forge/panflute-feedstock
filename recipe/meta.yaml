@@ -16,7 +16,7 @@ build:
   entry_points:
     - panflute = panflute:main
     - panfl = panflute:panfl
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
@@ -46,7 +46,7 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
-  summary: 'Pythonic Pandoc filters'
+  summary: Pythonic Pandoc filters
   doc_url: http://scorreia.com/software/panflute/
   dev_url: https://github.com/sergiocorreia/panflute
 
