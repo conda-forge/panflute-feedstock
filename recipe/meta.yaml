@@ -1,5 +1,6 @@
 {% set name = "panflute" %}
 {% set version = "2.0.5" %}
+{% set pandoc_minimum_version = "2.11.0.4" %}
 
 package:
   name: {{ name|lower }}
@@ -25,7 +26,8 @@ requirements:
     - python >=3.6
     - pyyaml
     - click
-    - pandoc >=2.11.0.4
+  run_constrained:
+    - pandoc >={{ pandoc_minimum_version }}
 
 test:
   imports:
@@ -37,6 +39,7 @@ test:
     - panfl --help
   requires:
     - pip
+    - pandoc >={{ pandoc_minimum_version }}
 
 about:
   home: https://github.com/sergiocorreia/panflute
