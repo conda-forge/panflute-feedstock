@@ -118,5 +118,6 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@ickc](https://github.com/ickc/)
 * [@kiwi0fruit](https://github.com/kiwi0fruit/)
 
