@@ -1,6 +1,9 @@
 {% set name = "panflute" %}
 {% set version = "2.0.5" %}
+# inclusive
 {% set pandoc_minimum_version = "2.11.0.4" %}
+# exclusive
+{% set pandoc_maximum_version = "2.12" %}
 
 package:
   name: {{ name|lower }}
@@ -12,7 +15,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   entry_points:
     - panflute = panflute:main
     - panfl = panflute:panfl
@@ -27,7 +30,7 @@ requirements:
     - pyyaml
     - click
   run_constrained:
-    - pandoc >={{ pandoc_minimum_version }}
+    - pandoc >={{ pandoc_minimum_version }},<{{ pandoc_maximum_version }}
 
 test:
   imports:
@@ -39,7 +42,7 @@ test:
     - panfl --help
   requires:
     - pip
-    - pandoc >={{ pandoc_minimum_version }}
+    - pandoc >={{ pandoc_minimum_version }},<{{ pandoc_maximum_version }}
 
 about:
   home: https://github.com/sergiocorreia/panflute
