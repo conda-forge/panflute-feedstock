@@ -15,7 +15,7 @@ source:
 
 build:
   noarch: python
-  number: 1
+  number: 2
   entry_points:
     - panflute = panflute:main
     - panfl = panflute:panfl
@@ -26,9 +26,9 @@ requirements:
     - python >=3.6
     - pip
   run:
-    - python >=3.6
-    - pyyaml
-    - click
+    - python >=3.6,<4
+    - pyyaml >=5,<6
+    - click >=7,<8
   run_constrained:
     - pandoc >={{ pandoc_minimum_version }},<{{ pandoc_maximum_version }}
 
