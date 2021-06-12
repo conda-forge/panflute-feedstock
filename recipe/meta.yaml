@@ -3,7 +3,7 @@
 # inclusive
 {% set pandoc_minimum_version = "2.11.0.4" %}
 # exclusive
-{% set pandoc_maximum_version = "2.14" %}
+{% set pandoc_maximum_version = "2.15" %}
 
 package:
   name: {{ name|lower }}
@@ -16,7 +16,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   entry_points:
     - panflute = panflute:main
     - panfl = panflute:panfl
