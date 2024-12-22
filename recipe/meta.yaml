@@ -10,11 +10,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/panflute-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/panflute-{{ version }}.tar.gz
   sha256: cb94244fe766893bb2f172ebb827ec3ded761b8fffa84e4c84b678b9f8a9ff95
 
 build:
-  number: 1
+  number: 2
   noarch: python
   entry_points:
     - panflute=panflute:main
@@ -24,10 +24,10 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
   run:
     - click >=6,<9
-    - python >=3.6
+    - python >={{ python_min }}
     - pyyaml >=3,<7
   run_constrained:
     - pandoc >={{ pandoc_minimum_version }},<{{ pandoc_maximum_version }}
@@ -43,6 +43,7 @@ test:
   requires:
     - pip
     - pandoc >={{ pandoc_minimum_version }},<{{ pandoc_maximum_version }}
+    - python {{ python_min }}
 
 about:
   home: https://github.com/sergiocorreia/panflute
