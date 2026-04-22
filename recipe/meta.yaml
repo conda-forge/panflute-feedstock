@@ -1,5 +1,5 @@
 {% set name = "panflute" %}
-{% set version = "2.1.3" %}
+{% set version = "2.3.1" %}
 # inclusive
 {% set pandoc_minimum_version = "2.11.0.4" %}
 # exclusive
@@ -11,10 +11,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/panflute-{{ version }}.tar.gz
-  sha256: cb94244fe766893bb2f172ebb827ec3ded761b8fffa84e4c84b678b9f8a9ff95
+  sha256: 5f1bd02a34ef3982ee025ec5b58fb3a6eedfc31d994b8ae39d8dc9915a2d8f1f
 
 build:
-  number: 1
+  number: 0
   noarch: python
   entry_points:
     - panflute=panflute:main
