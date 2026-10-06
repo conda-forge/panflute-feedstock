@@ -19,15 +19,16 @@ build:
   entry_points:
     - panflute=panflute:main
     - panfl=panflute:panfl
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
+    - python {{ python_min }}
+    - setuptools
     - pip
-    - python >=3.6
   run:
+    - python >={{ python_min }}
     - click >=6,<9
-    - python >=3.6
     - pyyaml >=3,<7
   run_constrained:
     - pandoc >={{ pandoc_minimum_version }},<{{ pandoc_maximum_version }}
@@ -41,6 +42,7 @@ test:
       echo '# Testing' | pandoc -F panflute 
     - panfl --help
   requires:
+    - python {{ python_min }}
     - pip
     - pandoc >={{ pandoc_minimum_version }},<{{ pandoc_maximum_version }}
 
